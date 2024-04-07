@@ -1,0 +1,15 @@
+.navigation {
+  width: 305px;
+}
+
+.navBar {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+}
+
+.navItem {
+  width: 45px;
+  height: 35px;
+  background-color: var(--c-eggshell);
+}

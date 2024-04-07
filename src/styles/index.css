@@ -1,0 +1,30 @@
+:root {
+  /* Colors */
+  --c-white: #fff;
+  --c-black: #000;
+  --c-blond: #F1F2AE;
+  --c-iron: #D9D9D9;
+  --c-eggshell: #E7EFD6;
+  --c-cosmos: #F9D7D7;
+  --c-periwinkle: #BDCDF6;
+
+  /* Fonts */
+  --f-primary: 'Inter', sans-serif;
+  --fs-primary: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  max-width: 1210px;
+  background-color: #fff;
+  margin: 0 auto;
+  min-height: 100vh;
+  font-family: var(--f-primary);
+  font-size: var(--fs-primary);
+  color: var(--c-black);
+}

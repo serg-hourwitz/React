@@ -1,0 +1,10 @@
+.banner {
+  height: 145px;
+  background-color: var(--c-iron);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.title {
+  line-height: 154px;
+}

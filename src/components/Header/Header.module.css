@@ -1,0 +1,9 @@
+.header{
+  width: 100%;
+  background-color: var(--c-iron);
+  color: var(--c-black);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
