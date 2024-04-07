@@ -1,15 +1,18 @@
-.navigation {
-  width: 305px;
-}
-
-.navBar {
+.list {
   display: flex;
   gap: 20px;
   list-style-type: none;
 }
 
-.navItem {
-  width: 45px;
-  height: 35px;
+.item {
+  padding: 5px;
   background-color: var(--c-eggshell);
+}
+
+a{
+  transition: ease-in-out .5s;
+}
+
+a:hover {
+  color: var(--c-cosmos);
 }

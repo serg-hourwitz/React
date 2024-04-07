@@ -28,3 +28,11 @@ body {
   font-size: var(--fs-primary);
   color: var(--c-black);
 }
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}

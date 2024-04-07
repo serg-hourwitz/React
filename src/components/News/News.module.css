@@ -1,8 +1,8 @@
 .news {
   padding-top: 20px;
   padding-left: 25px;
-  padding-bottom: 30px;
-  width: 300px;
+  padding-bottom: 25px;
+  max-width: 300px;
   background-color: var(--c-iron);
   text-align: center;
 }
@@ -12,14 +12,24 @@
   margin-bottom: 15px;
 }
 
-.newsList {
+.list {
   list-style-type: none;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.listItem {
-  height: 110px;
+.item {
   background-color: var(--c-periwinkle);
+}
+
+.block {
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 10px;
 }
