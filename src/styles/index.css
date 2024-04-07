@@ -10,7 +10,8 @@
 
   /* Fonts */
   --f-primary: 'Inter', sans-serif;
-  --fs-primary: 12px;
+  --fs-primary: 16px;
+
 }
 
 * {
