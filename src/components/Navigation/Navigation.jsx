@@ -1,23 +1,16 @@
 import styles from './Navigation.module.css';
+import items from './Navigation.data';
 
 
 const Navigation = () => {
+  
   return (
     <div className={styles.navigation}>
-      <ul className={styles.list}>
-        <li className={styles.item}>
-          <a href="#">Product</a>
-        </li>
-        <li className={styles.item}>
-          <a href="#">Customers</a>
-        </li>
-        <li className={styles.item}>
-          <a href="#">Pricing</a>
-        </li>
-        <li className={styles.item}>
-          <a href="#">Resources</a>
-        </li>
-      </ul>
+      <ul className={styles.list}>{items.map((item) => (
+    <li className={styles.item} key={item.id}>
+      <a href="#">{item.title}</a>
+    </li>
+  ))}</ul>
     </div>
   );
 };

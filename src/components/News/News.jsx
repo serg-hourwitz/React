@@ -2,6 +2,8 @@ import styles from './News.module.css';
 
 const title = 'Product Managers';
 
+
+
 const News = () => {
   return (
     <div className={styles.news}>
