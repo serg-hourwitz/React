@@ -8,7 +8,7 @@
   margin-bottom: 20px;
 }
 
-.bgd {
+.background {
   background-color: var(--c-white);
   border: 1px solid var(--c-black);
 }

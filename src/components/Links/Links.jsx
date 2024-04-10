@@ -1,6 +1,5 @@
 import styles from './Links.module.css';
-import items1 from './Links.data1';
-import items2 from './Links.data';
+import DATA from './Links.data';
 
 const Links = () => {
   return (
@@ -8,7 +7,7 @@ const Links = () => {
       <div className={styles.block}>
         <h4>Quick Links</h4>
         <ul className={styles.list}>
-          {items1.map((item) => (
+          {DATA.quick.map((item) => (
             <li className={styles.item} key={item.id}>
               <a href="#">{item.title}</a>
             </li>
@@ -18,7 +17,7 @@ const Links = () => {
       <div className={styles.block}>
         <h4>Legal Stuff</h4>
         <ul className={styles.list}>
-          {items2.map((item) => (
+          {DATA.legal.map((item) => (
             <li className={styles.item} key={item.id}>
               <a href="#">{item.title}</a>
             </li>

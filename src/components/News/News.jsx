@@ -2,12 +2,10 @@ import styles from './News.module.css';
 import articles from './News.data';
 
 
-const title = 'Product Managers';
-
 const News = () => {
   return (
     <div className={styles.news}>
-      <h2 className={styles.title}>{title}</h2>
+      <h2 className={styles.title}>Product Managers</h2>
       <ul className={styles.list}>
         {articles.map((article) => (
           <li className={styles.item} key={article.id}>

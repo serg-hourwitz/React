@@ -1,12 +1,11 @@
 import styles from './Blog.module.css';
 import articles from './Blog.data';
 
-const title = 'We design tools to unveil your superpowers';
 
 const Blog = () => {
   return (
     <div className={styles.blog}>
-      <h2 className={styles.title}>{title}</h2>
+      <h2 className={styles.title}>'We design tools to unveil your superpowers'</h2>
       <ul className={styles.list}>
         {articles.map((article) => (
           <li className={styles.item} key={article}>

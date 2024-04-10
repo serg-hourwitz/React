@@ -1,7 +1,6 @@
 import styles from './Main.module.css';
 import Blog from '../Blog/Blog';
 import News from '../News/News';
-import baseStyles from '../../styles/base.module.css';
 import Wrapper from '../Wrapper/Wrapper';
 
 const Main = () => {

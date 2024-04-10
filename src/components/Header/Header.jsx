@@ -5,20 +5,22 @@ import Button from '../Button/Button';
 // * Components
 import Wrapper from '../Wrapper/Wrapper';
 
-
 //* Styles
 import styles from './Header.module.css';
 import cn from 'classnames';
 
+//* State
+import { useCallback } from 'react';
+
 const Header = () => {
-  const signIn = () => {
+  const signIn = useCallback(() => {
     console.log('sign in');
-  };
+  }, []);
 
   return (
     <>
       {/*few classes*/}
-      <header className={cn([styles.header, styles.bgd])}>
+      <header className={cn([styles.header, styles.background])}>
         <Wrapper className={[styles.wrapper]}>
           <div className={styles.container}>
             <Logo />
