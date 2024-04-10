@@ -2,16 +2,17 @@ import styles from './Main.module.css';
 import Blog from '../Blog/Blog';
 import News from '../News/News';
 import baseStyles from '../../styles/base.module.css';
+import Wrapper from '../Wrapper/Wrapper';
 
 const Main = () => {
   return (
     <div className={styles.main}>
-      <div className={baseStyles.wrapper}>
+      <Wrapper>
         <div className={styles.container}>
           <Blog />
           <News />
         </div>
-      </div>
+      </Wrapper>
     </div>
   );
 };

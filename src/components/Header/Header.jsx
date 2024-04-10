@@ -1,21 +1,40 @@
-import styles from './Header.module.css';
-import baseStyles from '../../styles/base.module.css';
+// * Base
 import Logo from '../Logo/Logo';
 import Navigation from '../Navigation/Navigation';
-import Buttons from '../Buttons/Buttons';
+import Button from '../Button/Button';
+// * Components
+import Wrapper from '../Wrapper/Wrapper';
 
+
+//* Styles
+import styles from './Header.module.css';
+import cn from 'classnames';
 
 const Header = () => {
+  const signIn = () => {
+    console.log('sign in');
+  };
+
   return (
     <>
-      <header className={styles.header}>
-        <div className={baseStyles.wrapper}>
+      {/*few classes*/}
+      <header className={cn([styles.header, styles.bgd])}>
+        <Wrapper className={[styles.wrapper]}>
           <div className={styles.container}>
             <Logo />
             <Navigation />
-            <Buttons />
+            <div className={styles.block}>
+              <Button text={'Sign In'} onClick={signIn} />
+              <Button text={'Sign Up'} color={'white'} />
+              <Button
+                target="_blank"
+                href="https://www.instagram.com/"
+                color={'red'}
+                text="Instagram"
+              />
+            </div>
           </div>
-        </div>
+        </Wrapper>
       </header>
     </>
   );

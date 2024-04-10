@@ -10,7 +10,7 @@ const News = () => {
       <h2 className={styles.title}>{title}</h2>
       <ul className={styles.list}>
         {articles.map((article) => (
-          <li className={styles.item} key={article.key}>
+          <li className={styles.item} key={article.id}>
             <div className={styles.block}>
               <img
                 className={styles.icon}

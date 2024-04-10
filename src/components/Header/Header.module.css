@@ -1,4 +1,4 @@
-.header{
+.header {
   width: 100%;
   background-color: var(--c-iron);
   color: var(--c-black);
@@ -8,8 +8,22 @@
   margin-bottom: 20px;
 }
 
+.bgd {
+  background-color: var(--c-white);
+  border: 1px solid var(--c-black);
+}
+
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.block {
+  display: flex;
+  gap: 20px;
+}
+
+.wrapper {
+  border: 1px solid var(--c-black);
 }

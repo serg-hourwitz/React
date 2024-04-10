@@ -1,0 +1,4 @@
+.counter {
+  color: var(--c-red);
+  text-decoration: underline;
+}
