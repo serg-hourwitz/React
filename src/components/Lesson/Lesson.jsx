@@ -1,18 +1,12 @@
 import { useState } from 'react';
 import Time from '../Time/Time';
 import styles from './Lesson.module.css';
+import Axios from '../Axios/Axios';
 
 const Lesson = () => {
   const [value, setValue] = useState('Default value');
 
   const [count, setCount] = useState(0);
-
-  const add = () => {
-    setCount((prevValue) => prevValue + 1);
-  };
-  const subtraction = () => {
-    setCount((prevValue) => prevValue - 1);
-  };
 
   
   return (
@@ -26,14 +20,19 @@ const Lesson = () => {
 
       <h2>Counter: {count}</h2>
 
-      <button type="button" onClick={add}>
+      <button type="button" onClick={() => {
+    setCount((prevValue) => prevValue + 1);
+  }}>
         <span>ADD 1</span>
       </button>
-      <button type="button" onClick={subtraction}>
+      <button type="button" onClick={() => {
+    setCount((prevValue) => prevValue - 1);
+  }}>
         <span>SUBTRACT 1</span>
       </button>
 
       <Time />
+      <Axios />
     </>
   );
 };

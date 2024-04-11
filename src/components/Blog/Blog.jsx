@@ -1,5 +1,5 @@
 import styles from './Blog.module.css';
-import articles from './Blog.data';
+import LIST from './Blog.data';
 
 
 const Blog = () => {
@@ -7,17 +7,17 @@ const Blog = () => {
     <div className={styles.blog}>
       <h2 className={styles.title}>'We design tools to unveil your superpowers'</h2>
       <ul className={styles.list}>
-        {articles.map((article) => (
-          <li className={styles.item} key={article}>
+        {LIST.map(({src, alt, content, id, title}) => (
+          <li className={styles.item} key={id}>
             <div className={styles.block}>
               <img
                 className={styles.icon}
-                src={article.src}
-                alt={article.alt}
+                src={src}
+                alt={alt}
               />
               <div className={styles.content}>
-                <h3>{article.title}</h3>
-                <p>{article.content}</p>
+                <h3>{title}</h3>
+                <p>{content}</p>
               </div>
             </div>
           </li>

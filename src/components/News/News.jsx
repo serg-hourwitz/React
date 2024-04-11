@@ -1,5 +1,5 @@
 import styles from './News.module.css';
-import articles from './News.data';
+import LIST from './News.data';
 
 
 const News = () => {
@@ -7,15 +7,15 @@ const News = () => {
     <div className={styles.news}>
       <h2 className={styles.title}>Product Managers</h2>
       <ul className={styles.list}>
-        {articles.map((article) => (
-          <li className={styles.item} key={article.id}>
+        {LIST.map(({src, alt, content, id}) => (
+          <li className={styles.item} key={id}>
             <div className={styles.block}>
               <img
                 className={styles.icon}
-                src={article.src}
-                alt={article.alt}
+                src={src}
+                alt={alt}
               />
-              <p>{article.content}</p>
+              <p>{content}</p>
             </div>
           </li>
         ))}

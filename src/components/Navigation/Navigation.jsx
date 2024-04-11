@@ -9,9 +9,9 @@ const Navigation = () => {
   return (
     <div className={styles.navigation}>
       <ul className={styles.list}>
-        {items.map((item) => (
-          <li className={styles.item} key={item.id}>
-            <a href="#">{item.title}</a>
+        {items.map(({title, id}) => (
+          <li className={styles.item} key={id}>
+            <a href="#">{title}</a>
           </li>
         ))}
       </ul>

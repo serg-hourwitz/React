@@ -7,9 +7,9 @@ const Links = () => {
       <div className={styles.block}>
         <h4>Quick Links</h4>
         <ul className={styles.list}>
-          {DATA.quick.map((item) => (
-            <li className={styles.item} key={item.id}>
-              <a href="#">{item.title}</a>
+          {DATA.quick.map(({title, id}) => (
+            <li className={styles.item} key={id}>
+              <a href="#">{title}</a>
             </li>
           ))}
         </ul>
@@ -17,9 +17,9 @@ const Links = () => {
       <div className={styles.block}>
         <h4>Legal Stuff</h4>
         <ul className={styles.list}>
-          {DATA.legal.map((item) => (
-            <li className={styles.item} key={item.id}>
-              <a href="#">{item.title}</a>
+          {DATA.legal.map(({title, id}) => (
+            <li className={styles.item} key={id}>
+              <a href="#">{title}</a>
             </li>
           ))}
         </ul>

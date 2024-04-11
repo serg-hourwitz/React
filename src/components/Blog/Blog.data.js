@@ -1,4 +1,4 @@
-const articles = [
+const LIST = [
   {
     title: 'First click tests',
     content: 'While most people enjoy casino gambling',
@@ -29,4 +29,4 @@ const articles = [
   },
 ];
 
-export default articles;
+export default LIST;

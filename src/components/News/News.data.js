@@ -1,4 +1,4 @@
-const articles = [
+const LIST = [
   {
     src: '/check.svg',
     alt: 'check',
@@ -20,4 +20,4 @@ const articles = [
   },
 ];
 
-export default articles;
+export default LIST;
