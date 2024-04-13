@@ -3,6 +3,7 @@ import Time from '../Time/Time';
 import styles from './Lesson.module.css';
 import Axios from '../Axios/Axios';
 import Converter from '../Converter/Converter';
+import Icon from '../Icon/Icon';
 
 const Lesson = () => {
   const [value, setValue] = useState('Default value');
@@ -10,7 +11,7 @@ const Lesson = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <div>
       <h1 className={styles.counter}>Value: {value}</h1>
 
       <input type="text" onInput={(e) => setValue(e.target.value)} />
@@ -40,7 +41,8 @@ const Lesson = () => {
       <Time />
       <Converter />
       <Axios />
-    </>
+      {/* <Icon icon='facebook/> */}
+    </div>
   );
 };
 

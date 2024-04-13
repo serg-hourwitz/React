@@ -50,10 +50,9 @@ const Axios = () => {
         ) : (
           state.list.map(({ txt, rate, cc, r030, exchangedate }) => (
             <Item
-              txt={txt}
+              currency={`${txt} (${cc})`}
               rate={rate}
-              cc={cc}
-              exchangedate={exchangedate}
+              exchangeDate={exchangedate}
               key={`list item ${r030}`}
             />
           ))
@@ -63,14 +62,14 @@ const Axios = () => {
   );
 };
 
-const Item = ({ cc, txt, rate, exchangedate }) => {
+const Item = ({ currency, rate, exchangeDate }) => {
   return (
     <li className={styles.item}>
       <h4>
-        {txt} ({cc})
+        {currency}
       </h4>
       <p>Rate: {rate}</p>
-      <p>Exchange date: {exchangedate}</p>
+      <p>Exchange date: {exchangeDate}</p>
     </li>
   );
 };
