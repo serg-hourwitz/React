@@ -23,6 +23,8 @@ const Axios = () => {
       .get('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
       .then(({ data }) => {
         setState((s) => ({ ...s, list: data }));
+      console.log(data);
+
       })
       .catch(() => {
         setState((s) => ({ ...s, error: ERROR_TEXT }));

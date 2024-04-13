@@ -1,5 +1,5 @@
 // * Base
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
 // * Component
@@ -28,7 +28,7 @@ const Converter = () => {
     fetchExchangeRate(state.fromCurrency, state.toCurrency);
   }, [state.fromCurrency, state.toCurrency]);
 
-  const fetchExchangeRate = (fromCurrency, toCurrency) => {
+  const fetchExchangeRate = useCallback((fromCurrency, toCurrency) => {
     axios
       .get('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
       .then(({ data }) => {
@@ -62,7 +62,11 @@ const Converter = () => {
           loading: false,
         }));
       });
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchExchangeRate(state.fromCurrency, state.toCurrency);
+  }, [fetchExchangeRate, state.fromCurrency, state.toCurrency]);
 
   useEffect(() => {
     const { amount, exchangeRate } = state;
@@ -74,30 +78,30 @@ const Converter = () => {
     }
   }, [state.amount, state.exchangeRate]);
 
-  const handleAmountChange = e => {
-    const inputValue = e.target.value;
+  const handleAmountChange = useCallback((e) => {
+    const inputValue = Number(e.target.value);
     const newAmount = inputValue > 0 ? inputValue : 1;
     setState((prevState) => ({
       ...prevState,
       amount: newAmount,
     }));
-  };
+  }, []);
 
-  const handleFromCurrencyChange = e => {
+  const handleFromCurrencyChange = useCallback((e) => {
     const fromCurrency = e.target.value;
     setState((prevState) => ({
       ...prevState,
       fromCurrency,
     }));
-  };
+  }, []);
 
-  const handleToCurrencyChange = e => {
+  const handleToCurrencyChange = useCallback((e) => {
     const toCurrency = e.target.value;
     setState((prevState) => ({
       ...prevState,
       toCurrency,
     }));
-  };
+  }, []);
 
   if (state.loading) {
     return <div>Loading...</div>;
