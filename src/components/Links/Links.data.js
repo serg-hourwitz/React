@@ -6,10 +6,10 @@ const DATA = {
     { title: 'Terms of Service', id: 4 },
   ],
   legal: [
-    { title: 'About Us', id: 5 },
-    { title: 'Blog', id: 6 },
-    { title: 'Contact', id: 7 },
-    { title: 'FAQ', id: 8 },
+    { title: 'About Us', id: 1 },
+    { title: 'Blog', id: 2 },
+    { title: 'Contact', id: 3 },
+    { title: 'FAQ', id: 4 },
   ],
 };
 

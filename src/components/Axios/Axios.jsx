@@ -15,17 +15,6 @@ const ERROR_TEXT = 'List loading error. Try again';
 
 const Axios = () => {
   const [state, setState] = useState(DEFAULT_STATE);
-  // const [list, setList] = useState([]);
-  // const [error, setError] = useState('');
-  // const [loading, setLoading] = useState(true);
-
-  // зливаємо всі стейти в один
-
-  // const [state, setState] = useState({
-  //   list: [],
-  //   error: '',
-  //   loading: true,
-  // });
 
   const getList = useCallback(() => {
     setState((prevState) => ({ ...prevState, loading: true }));
