@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Time from '../Time/Time';
 import styles from './Lesson.module.css';
-import Axios from '../Axios/Axios';
+import Axios from '../Axios/Dates';
 import Converter from '../Converter/Converter';
 import Icon from '../Icon/Icon';
 import { Outlet } from 'react-router-dom';

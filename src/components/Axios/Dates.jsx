@@ -6,14 +6,14 @@ import axios from 'axios';
 import Button from '../Button/Button';
 
 // * Styles
-import styles from './Axios.module.css';
+import styles from './Dates.module.css';
 
 // * Local
 const DEFAULT_STATE = { list: [], error: '', loading: true };
 
 const ERROR_TEXT = 'List loading error. Try again';
 
-const Axios = () => {
+const Dates = () => {
   const [state, setState] = useState(DEFAULT_STATE);
 
   const getList = useCallback(() => {
@@ -73,4 +73,4 @@ const Item = ({ currency, rate, exchangeDate }) => {
   );
 };
 
-export default Axios;
+export default Dates;
