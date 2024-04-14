@@ -7,6 +7,7 @@ import Loading from './components/Loading/Loading';
 
 // * Element
 const Element = ({ component }) => {
+  // Suspense - обгортка елемента, що вантажиться
   return <Suspense fallback={<Loading />}>{component}</Suspense>;
 }
 
@@ -25,11 +26,10 @@ const routes = createBrowserRouter([
         // element: <Main />,
 
         // Loading відображається, поки вантажиться Main
-        // Suspense - обгортка елемента, що вантажиться
         // element: <Suspense fallback={<Loading />}>
         //   {<Main />}
         // </Suspense>,
-        
+
         // Заміняємо на Element
         element: <Element component={<Main />} />,
       },
