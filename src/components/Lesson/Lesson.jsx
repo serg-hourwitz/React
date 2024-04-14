@@ -4,6 +4,7 @@ import styles from './Lesson.module.css';
 import Axios from '../Axios/Axios';
 import Converter from '../Converter/Converter';
 import Icon from '../Icon/Icon';
+import { Outlet } from 'react-router-dom';
 
 const Lesson = () => {
   const [value, setValue] = useState('Default value');
@@ -37,11 +38,10 @@ const Lesson = () => {
       >
         <span>SUBTRACT 1</span>
       </button>
-
       <Time />
+      <Icon icon="facebook" />
       <Converter />
       <Axios />
-      {/* <Icon icon='facebook/> */}
     </div>
   );
 };

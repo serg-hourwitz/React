@@ -8,6 +8,7 @@ import Wrapper from '../Wrapper/Wrapper';
 //* Styles
 import styles from './Header.module.css';
 import cn from 'classnames';
+import { Link } from 'react-router-dom';
 
 //* State
 import { useCallback } from 'react';
@@ -37,6 +38,11 @@ const Header = () => {
             </div>
           </div>
         </Wrapper>
+        {/* navigation in framework */}
+        <div className={styles.links}>
+          <Link to="/">Main</Link>
+          <Link to="/about">About</Link>
+        </div>
       </header>
     </>
   );

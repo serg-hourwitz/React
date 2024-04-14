@@ -27,3 +27,8 @@
 .wrapper {
   border: 1px solid var(--c-black);
 }
+
+.links {
+  display: flex;
+  gap: 20px;
+}

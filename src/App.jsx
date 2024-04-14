@@ -1,4 +1,5 @@
 import Header from "./components/Header/Header";
+import { Outlet } from "react-router-dom";
 import Banner from "./components/Banner/Banner";
 import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
@@ -7,7 +8,10 @@ import Lesson from "./components/Lesson/Lesson";
 const App = () => {
   return (
     <div>
-      {/* /* * Lesson */}
+      {/* <Header /> */}
+      <Outlet />
+
+      {/* Lesson */}
       <Lesson />
       {/* * Header */}
       <Header />
@@ -17,7 +21,7 @@ const App = () => {
       <Main />
       {/* * Footer */}
       <Footer />
-    </div>  
+    </div>
   );
 };
 
