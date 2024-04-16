@@ -1,25 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-const Time = () => {
-  const [currentTime, setCurrentTime] = useState(
-    new Date().toLocaleTimeString()
-  );
+const useTime = () => {
+  // 1. Відстежувати стан поточної дати. Функція `useState` отримує функцію-ініціалізатор в якості свого початкового стану. Він виконується лише один раз при виклику хука, тому в початковому стані буде лише поточна дата, на спочатку встановлюється час виклику хука.
+  const [time, setTime] = useState(() => new Date());
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentTime(new Date().toLocaleTimeString());
+    // 2. Оновлювати поточну дату щосекунди за допомогою `setInterval`.
+    const id = setInterval(() => {
+      setTime(new Date()); // ✅ Добре: неідемпотентний код більше не виконується під час рендеру
     }, 1000);
+    // 3. Поверніть функцію очищення, щоб не витік таймер `setInterval`.
+    return () => clearInterval(id);
+  }, []);
 
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []); // Пустий масив залежностей означає, що ефект викликається лише після першого рендерингу компонента
-
-  return (
-    <div>
-      <h2>It is {currentTime}.</h2>
-    </div>
-  );
+  return time;
 };
 
-export default Time;
+const Clock = () => {
+  const time = useTime();
+  return <div style={{fontWeight: 'bold'}}>{time.toLocaleString()}</div>;
+};
+
+export default Clock;

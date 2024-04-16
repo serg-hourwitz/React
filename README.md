@@ -14,6 +14,9 @@ const [state, setState] = useState(initialState)
 useCallback це React Hook, який дозволяє кешувати визначення функції між повторним рендерингом.
 const cachedFn = useCallback(fn, dependencies)
 
+useEffect це React Hook, який дозволяє синхронізувати компонент із зовнішньою системою.
+useEffect(setup, dependencies?)
+
 useContext це React Hook, який дозволяє вам читати та підписуватися на контекст із вашого компонента.
 const value = useContext(SomeContext)
 
@@ -23,9 +26,6 @@ useDebugValue(value, format?)
 
 useDeferredValue це хук React, який дозволяє відкласти оновлення частини інтерфейсу користувача.
 const deferredValue = useDeferredValue(value)
-
-useEffect це React Hook, який дозволяє синхронізувати компонент із зовнішньою системою.
-useEffect(setup, dependencies?)
 
 useId це React Hook для генерації унікальних ідентифікаторів, які можна передати в атрибути доступності.
 useId не приймає жодних параметрів.
@@ -49,6 +49,10 @@ const [state, dispatch] = useReducer(reducer, initialArg, init?)
 useRef це React Hook, який дозволяє посилатися на значення, яке не потрібне для відтворення.
 const ref = useRef(initialValue)
 
+Замість об’єкта ref (як того, що повертає useRef), ви можете передати функцію атрибуту ref.
+<div ref={(node) => console.log(node)} />
+Не повертайте нічого із зворотного виклика ref .
+
 useSyncExternalStore це React Hook, який дозволяє підписатися на зовнішній магазин.
 Він повертає знімок даних у сховищі. Вам потрібно передати дві функції як аргументи:
 1. Функція subscribeмає підписатися на магазин і повернути функцію, яка скасовує підписку.
@@ -57,3 +61,14 @@ const snapshot = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot?
 
 useTransition це React Hook, який дозволяє оновлювати стан, не блокуючи інтерфейс користувача.
 const [isPending, startTransition] = useTransition()
+
+
+Ці події запускаються лише для <form>елементів:
+
+* onReset: функція Eventобробки . Спрацьовує, коли форму скидають.
+* onResetCapture: версія, onResetяка запускається на етапі захоплення.
+* onSubmit: функція Eventобробки . Спрацьовує, коли надсилається форма.
+* onSubmitCapture: версія, onSubmitяка запускається на етапі захоплення.
+
+* preventDefault(): запобігає дії браузера за умовчанням для події.
+* stopPropagation(): зупиняє розповсюдження події через дерево React.
