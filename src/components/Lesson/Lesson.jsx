@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Time from '../Time/Time';
 import styles from './Lesson.module.css';
-import Axios from '../Dates/Dates';
+import Dates from '../Dates/Dates';
 import Converter from '../Converter/Converter';
 import Icon from '../Icon/Icon';
 
@@ -39,8 +39,10 @@ const Lesson = () => {
       </button>
       <Time />
       <Icon icon="facebook" />
+      <Icon icon="building" />
+      <Icon icon="megaphone" />
       <Converter />
-      <Axios />
+      <Dates />
     </div>
   );
 };

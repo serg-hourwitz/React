@@ -8,7 +8,6 @@ const Icon = ({ className = [], icon }) => {
   return (
     <>
       <p>
-        Added icon: 
         <svg className={cn([styles.icon, ...className])} viewBox="0 0 32 32">
           {ICONS[icon]}
         </svg>
