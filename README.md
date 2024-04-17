@@ -55,8 +55,8 @@ const ref = useRef(initialValue)
 
 useSyncExternalStore це React Hook, який дозволяє підписатися на зовнішній магазин.
 Він повертає знімок даних у сховищі. Вам потрібно передати дві функції як аргументи:
-1. Функція subscribeмає підписатися на магазин і повернути функцію, яка скасовує підписку.
-2. Функція getSnapshotповинна читати знімок даних зі сховища.
+1. Функція subscribe має підписатися на магазин і повернути функцію, яка скасовує підписку.
+2. Функція getSnapshot повинна читати знімок даних зі сховища.
 const snapshot = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot?)
 
 useTransition це React Hook, який дозволяє оновлювати стан, не блокуючи інтерфейс користувача.
