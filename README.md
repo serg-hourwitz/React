@@ -17,6 +17,12 @@ const cachedFn = useCallback(fn, dependencies)
 useEffect це React Hook, який дозволяє синхронізувати компонент із зовнішньою системою.
 useEffect(setup, dependencies?)
 
+memo дозволяє пропустити повторне рендеринг компонента, якщо його атрибути не змінені.
+const MemoizedComponent = memo(SomeComponent, arePropsEqual?)
+
+useMemo — це хук React, який дозволяє кешувати результат обчислень між повторними візуалізаціями.
+const cachedValue = useMemo(calculateValue, dependencies)
+
 useContext це React Hook, який дозволяє вам читати та підписуватися на контекст із вашого компонента.
 const value = useContext(SomeContext)
 
@@ -39,9 +45,6 @@ useInsertionEffect(setup, dependencies?)
 
 useLayoutEffect це версія, useEffectяка запускається до того, як браузер перефарбує екран.
 useLayoutEffect(setup, dependencies?)
-
-useMemo — це хук React, який дозволяє кешувати результат обчислень між повторними візуалізаціями.
-const cachedValue = useMemo(calculateValue, dependencies)
 
 useReduce — це хук React, який дозволяє додавати редуктор до вашого компонента.
 const [state, dispatch] = useReducer(reducer, initialArg, init?)

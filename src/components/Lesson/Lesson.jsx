@@ -12,7 +12,7 @@ const Lesson = () => {
 
   return (
     <div>
-      <h1 className={styles.counter}>Value: {value}</h1>
+      <h1 className={styles.text}>Value: {value}</h1>
 
       <input type="text" onInput={(e) => setValue(e.target.value)} />
       <button type="button" onClick={() => setValue('Default value')}>

@@ -11,17 +11,39 @@ import cn from 'classnames';
 import { Link } from 'react-router-dom';
 
 //* State
-import { useCallback } from 'react';
+import { memo, lazy, Suspense, useCallback, useEffect, useState } from 'react';
+
+const Burger = lazy(() => import('../Burger/Burger'));
 
 const Header = () => {
   const signIn = useCallback(() => {
     console.log('sign in');
   }, []);
 
+  // resizing
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const resizeListener = window.addEventListener('resize', () =>
+      setWidth(window.innerWidth)
+    );
+
+    return () => {
+      window.removeEventListener('resize', resizeListener);
+    };
+  }, []);
+
   return (
     <>
       {/*few classes*/}
-      <header className={cn([styles.header, styles.background])}>
+      {/* add class small for resizing */}
+      <header
+        className={cn([
+          styles.header,
+          styles.background,
+          width < 480 && styles.small,
+        ])}
+      >
         <Wrapper className={[styles.wrapper]}>
           <div className={styles.container}>
             <Logo />
@@ -46,10 +68,16 @@ const Header = () => {
           <Link to="https://react.dev/reference/react/Suspense" target="_blank">
             Suspense
           </Link>
+          {/* resizing */}
+          {width < 768 && (
+            <Suspense fallback={<></>}>
+              <Burger />
+            </Suspense>
+          )}
         </div>
       </header>
     </>
   );
 };
 
-export default Header;
+export default memo(Header);

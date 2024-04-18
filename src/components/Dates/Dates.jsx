@@ -1,5 +1,5 @@
 // * Base
-import { useCallback, useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useId, useState } from 'react';
 import axios from 'axios';
 
 // * Components
@@ -15,6 +15,9 @@ const ERROR_TEXT = 'List loading error. Try again';
 
 const Dates = () => {
   const [state, setState] = useState(DEFAULT_STATE);
+
+  const id = useId(); // додаємо до key
+  // console.log('id: ', id);
 
   const getList = useCallback(() => {
     setState((prevState) => ({ ...prevState, loading: true }));
@@ -52,7 +55,7 @@ const Dates = () => {
               currency={`${txt} (${cc})`}
               rate={rate}
               exchangeDate={exchangedate}
-              key={`list item ${r030}`}
+              key={`list item ${r030}, ${id}`}
             />
           ))
         )}
@@ -73,4 +76,4 @@ const Item = ({ currency, rate, exchangeDate }) => {
   );
 };
 
-export default Dates;
+export default memo(Dates);
