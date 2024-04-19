@@ -13,6 +13,12 @@
   opacity: .8;
 }
 
+.button:disabled {
+  background-color: var(--c-black);
+  color: var(--c-white);
+
+}
+
 .red {
   background-color: var(--c-red);
 }

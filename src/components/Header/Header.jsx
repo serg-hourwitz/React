@@ -64,6 +64,7 @@ const Header = () => {
         <div className={styles.links}>
           <Link to="/">Main</Link>
           <Link to="/about">About</Link>
+          <Link to="/Registration">Registration</Link>
           {/* navigation to another URL */}
           <Link to="https://react.dev/reference/react/Suspense" target="_blank">
             Suspense

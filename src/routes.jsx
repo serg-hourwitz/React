@@ -15,6 +15,7 @@ const Element = ({ component }) => {
 const Main = lazy(() => import('./pages/Main/Main'));
 const About = lazy(() => import('./pages/About/About'));
 const Error = lazy(() => import('./pages/Error/Error'));
+const Registration = lazy (() => import('./pages/Registration/Registration'));
 
 const routes = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const routes = createBrowserRouter([
         //   {<About />}
         // </Suspense>,
         element: <Element component={<About />} />,
+      },
+      {
+        path: '/Registration',
+        element: <Element component={<Registration />} />,
       },
       {
         // Error 404

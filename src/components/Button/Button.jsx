@@ -5,6 +5,7 @@ const Button = ({
   text = 'Default text',
   type = 'button',
   color = 'default',
+  disabled = false,
   href = '',
   onClick,
 }) => {
@@ -30,7 +31,12 @@ const Button = ({
 
   return (
     <div>
-      <button type={type} onClick={onClick} className={cn(styleList)}>
+      <button
+        type={type}
+        onClick={onClick}
+        className={cn(styleList)}
+        disabled={disabled}
+      >
         <span>{text}</span>
       </button>
     </div>
@@ -39,7 +45,7 @@ const Button = ({
 
 const Link = ({ text, href, onClick, styleList }) => {
   return (
-    <a target='_blank' href={href} onClick={onClick} className={cn(styleList)}>
+    <a target='_blank' href={href} onClick={onClick} className={cn(styleList)} >
       <span>{text}</span>
     </a>
   );
