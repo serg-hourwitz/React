@@ -5,12 +5,20 @@ import Field from '../Field/Field';
 // * Components
 import Button from '../Button/Button';
 import FORM from '../helpers/form';
+import Select from '../Select/Select';
+import Radio from '../Radio/Radio';
+import Checkbox from '../Checkbox/Checkbox';
 
 // * Styles
 import styles from './RegistrationForm.module.css';
 
 // * Local constants
-const INITIAL_VALUES = { email: '', password: '', username: '', phone: '+380' };;
+const INITIAL_VALUES = {
+  email: '',
+  password: '',
+  username: '',
+  phone: '+380',
+};
 
 const RegistrationForm = () => {
   const validators = ({ email, username, password }) => {
@@ -60,7 +68,7 @@ const RegistrationForm = () => {
           handleChange,
           handleBlur,
           handleSubmit,
-          isSubmitting
+          isSubmitting,
           /* and other goodies */
         }) => (
           <form onSubmit={handleSubmit} className={styles.form}>
@@ -101,40 +109,46 @@ const RegistrationForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            {/* <input
-              type="email"
-              name="email"
+            <div className={styles.radio}>
+              <Radio
+                title="male"
+                name="male"
+                value={values.radio}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                defaultChecked={true}
+              />
+              <Radio
+                title="female"
+                value={values.radio}
+                name="female"
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+            </div>
+            <div className={styles.checkbox}>
+              <Checkbox
+                title="ukr"
+                name="ukr"
+                value={values.checkbox}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              <Checkbox
+                title="eng"
+                name="eng"
+                value={values.checkbox}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+            </div>
+            <Select
+              title="Select a country"
+              name="select"
+              value={values.select}
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.email}
             />
-            {errors.email && touched.email && errors.email}
-            <input
-              type="text"
-              name="username"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.username}
-            />
-            {errors.username && touched.email && errors.username}
-            <input
-              type="password"
-              name="password"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.password}
-            />
-            {errors.password && touched.password && errors.password}
-            <input
-              type="phone"
-              name="phone"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.phone}
-            />
-            <button type="submit" disabled={isSubmitting}>
-              Submit
-            </button> */}
             <Button type="submit" text="Submit" disabled={isSubmitting} />
           </form>
         )}

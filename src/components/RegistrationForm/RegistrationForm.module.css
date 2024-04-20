@@ -5,3 +5,8 @@
   padding: 20px;
   border: 2px solid var(--c-black);
 }
+
+.radio, .checkbox {
+  display: flex;
+  gap: 30px;
+}

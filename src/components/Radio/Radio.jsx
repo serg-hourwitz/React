@@ -1,14 +1,14 @@
-import styles from './Field.module.css';
+import styles from './Radio.module.css'
 
-const Field = ({
+
+const Radio = ({
   title,
-  type = 'text',
+  type = 'radio',
   name,
   value,
-  placeholder,
-  error,
   onChange,
   onBlur,
+  defaultChecked,
 }) => {
   return (
     <>
@@ -21,14 +21,11 @@ const Field = ({
           onChange={onChange}
           onBlur={onBlur}
           value={value}
-          placeholder={placeholder}
+          defaultChecked={defaultChecked}
         />
-        <div className={styles.error}>{error || ''}</div>
       </label>
     </>
   );
 };
 
-export default Field;
-
-//
+export default Radio;

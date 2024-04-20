@@ -1,12 +1,11 @@
-import styles from './Field.module.css';
+import styles from './Checkbox.module.css';
 
-const Field = ({
+
+const Checkbox = ({
   title,
-  type = 'text',
+  type = 'checkbox',
   name,
   value,
-  placeholder,
-  error,
   onChange,
   onBlur,
 }) => {
@@ -21,14 +20,10 @@ const Field = ({
           onChange={onChange}
           onBlur={onBlur}
           value={value}
-          placeholder={placeholder}
         />
-        <div className={styles.error}>{error || ''}</div>
       </label>
     </>
   );
-};
+}
 
-export default Field;
-
-//
+export default Checkbox
