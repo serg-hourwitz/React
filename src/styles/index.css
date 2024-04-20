@@ -42,6 +42,6 @@ a {
   text-decoration: none;
 }
 
-input {
+input, select {
   width: 100%;
 }

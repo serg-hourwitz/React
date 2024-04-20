@@ -111,17 +111,17 @@ const RegistrationForm = () => {
             />
             <div className={styles.radio}>
               <Radio
-                title="male"
-                name="male"
+                title="Male"
+                name="radio"
                 value={values.radio}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 defaultChecked={true}
               />
               <Radio
-                title="female"
+                title="Female"
                 value={values.radio}
-                name="female"
+                name="radio"
                 onChange={handleChange}
                 onBlur={handleBlur}
               />

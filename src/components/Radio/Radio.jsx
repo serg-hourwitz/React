@@ -3,7 +3,6 @@ import styles from './Radio.module.css'
 
 const Radio = ({
   title,
-  type = 'radio',
   name,
   value,
   onChange,
@@ -16,7 +15,7 @@ const Radio = ({
         {title && <div className={styles.title}>{title}</div>}
         <input
           className={styles.input}
-          type={type}
+          type='radio'
           name={name}
           onChange={onChange}
           onBlur={onBlur}
