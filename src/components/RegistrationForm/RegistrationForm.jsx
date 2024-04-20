@@ -128,15 +128,15 @@ const RegistrationForm = () => {
             </div>
             <div className={styles.checkbox}>
               <Checkbox
-                title="ukr"
-                name="ukr"
+                title="JS"
+                name="JS"
                 value={values.checkbox}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
               <Checkbox
-                title="eng"
-                name="eng"
+                title="React"
+                name="React"
                 value={values.checkbox}
                 onChange={handleChange}
                 onBlur={handleBlur}
